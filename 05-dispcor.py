@@ -163,7 +163,7 @@ for INPUT_SPEC in SPECLIST:
     NROW = 7
     fig, axs = plt.subplots(num=98, nrows=NROW, figsize=(18,24))
     x1, x2 = min(x), max(x)
-    y1, y2 = max([np.nanmin(y), 0]), np.nanmax(y)
+    y1, y2 = max([np.nanmin(y), 0]), np.percentile(y,99.9)
     dx = (x2-x1)/NROW
     for i in range(NROW):
         x_start, x_end = x1+dx*i, x1+dx*(i+1)

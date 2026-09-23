@@ -118,8 +118,8 @@ for k, FNAME in enumerate(FLIST):
         # FLAT Correction for object files
         # 0:FLAT, 1:COMP, 2~:OBJECT
         if (k > 1) & (np.any(FLATSPEC) != None):
-            caprow = caprow / FLATSPEC[j,:]
-            aprow = aprow / FLATSPEC[j,:]
+            caprow = caprow / (FLATSPEC[j,:]+1)
+            aprow = aprow / (FLATSPEC[j,:]+1)
         ecs.append(caprow)
         
         yp0 = chebval(H/2, c)
